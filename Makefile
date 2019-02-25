@@ -74,11 +74,11 @@ cover: setup
 	@echo "Running tests with coverage..."
 	@env go test -cover ${GOTEST_FLAGS} ./...
 
-${BUILDDIR}/man/%: man/%.mdoc
+${BUILDDIR}/man/%: man/%.scd
 	@[ -d "${BUILDDIR}/man" ] || mkdir -p "${BUILDDIR}/man"
-	@cat $< | sed -E "s#.Os (.*) VERSION#.Os \1 ${APP_VER}#" > $@
+	@scdoc < $< | sed -E "s#.Os (.*) VERSION#.Os \1 ${APP_VER}#" > $@
 
-man: $(patsubst man/%.mdoc,${BUILDDIR}/man/%,$(wildcard man/*.1.mdoc))
+man: $(patsubst man/%.scd,${BUILDDIR}/man/%,$(wildcard man/*.1.scd))
 
 tar: all
 	@echo "Building tar..."
