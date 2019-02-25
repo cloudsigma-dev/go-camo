@@ -120,6 +120,7 @@ Building requires:
 
 *   make
 *   git
+*   [scdoc][20] (required to build manpages)
 *   go (latest version recommended. At least version >= 1.11 for go mod support)
 
 Additionally required, if cross compiling:
@@ -363,3 +364,4 @@ file for details.
 [17]: https://github.com/MrSaints
 [18]: https://github.com/arachnys/go-camo
 [19]: https://www.freedesktop.org/wiki/Software/systemd/
+[20]: https://git.sr.ht/~sircmpwn/scdoc
